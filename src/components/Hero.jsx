@@ -16,13 +16,13 @@ const Hero = () => {
       }
 
       const res = await fetchData(src, dest);
-      //   console.log(res.data);
+      // console.log(res);
       setNavigationData(res.data);
       // Handle the data or update state as needed
 
       setSrc("");
       setDest("");
-      navigate("/navigation-info");
+      navigate(`/navigation-info/${res.request_id}`);
     } catch (error) {
       console.error("Error in handleSearch:", error);
       // Handle error (e.g., show error message)

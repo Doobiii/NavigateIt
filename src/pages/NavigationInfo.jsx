@@ -1,6 +1,5 @@
 import React, { useContext } from "react";
 import { NavigationContext } from "../context/NavigationContext";
-import { Map, GoogleApiWrapper } from "google-maps-react";
 
 const NavigationInfo = () => {
   const { navigationData } = useContext(NavigationContext);
