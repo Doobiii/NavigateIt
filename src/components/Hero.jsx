@@ -16,7 +16,7 @@ const Hero = () => {
       }
 
       const res = await fetchData(src, dest);
-      // console.log(res);
+      console.log(res);
       setNavigationData(res.data);
       // Handle the data or update state as needed
 

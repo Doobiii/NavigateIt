@@ -20,8 +20,8 @@ const App = () => {
   return (
     <>
       <NavigationProvider>
+        <Hero />
         <NavigationInfo />
-        {/* <Hero /> */}
         {/* <NavigationInfo /> */}
         {/* <Routes> */}
         {/* <Route path="/" element={<Hero />} /> */}
