@@ -23,10 +23,10 @@ const App = () => {
         <NavigationInfo />
         {/* <Hero /> */}
         {/* <NavigationInfo /> */}
-        <Routes>
-          <Route path="/" element={<Hero />} />
-          <Route path="/navigation-info" element={<NavigationInfo />} />
-        </Routes>
+        {/* <Routes> */}
+        {/* <Route path="/" element={<Hero />} /> */}
+        {/* <Route path="/navigation-info" element={<NavigationInfo />} /> */}
+        {/* </Routes> */}
       </NavigationProvider>
     </>
   );
