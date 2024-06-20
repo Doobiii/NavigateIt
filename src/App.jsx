@@ -20,11 +20,12 @@ const App = () => {
   return (
     <>
       <NavigationProvider>
+        <NavigationInfo />
         {/* <Hero /> */}
         {/* <NavigationInfo /> */}
         <Routes>
           <Route path="/" element={<Hero />} />
-          <Route path="/navigation-info/:id" element={<NavigationInfo />} />
+          <Route path="/navigation-info" element={<NavigationInfo />} />
         </Routes>
       </NavigationProvider>
     </>
