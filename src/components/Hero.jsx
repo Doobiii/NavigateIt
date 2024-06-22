@@ -35,17 +35,6 @@ const Hero = () => {
     }
   };
 
-  if (loading) {
-    return (
-      <div className="flex space-x-2 justify-center items-center bg-white h-screen dark:invert">
-        <span className="sr-only">Loading...</span>
-        <div className="h-8 w-8 bg-black rounded-full animate-bounce [animation-delay:-0.3s]"></div>
-        <div className="h-8 w-8 bg-black rounded-full animate-bounce [animation-delay:-0.15s]"></div>
-        <div className="h-8 w-8 bg-black rounded-full animate-bounce"></div>
-      </div>
-    );
-  }
-
   return (
     <main
       className="md:px-12 md:py-6 bg-primaryDark h-screen"
@@ -79,12 +68,21 @@ const Hero = () => {
                 placeholder="Enter the destination"
               />
 
-              <button
-                className="text-white hover:text-gray-300 py-2 px-4 rounded-lg z-1"
-                onClick={handleSearch}
-              >
-                Navigate
-              </button>
+              {loading ? (
+                <div className="flex space-x-2 justify-center items-start">
+                  <span className="sr-only items-start">Loading...</span>
+                  <div className="h-4 w-4 bg-white rounded-full animate-bounce [animation-delay:-0.3s]"></div>
+                  <div className="h-4 w-4 bg-white rounded-full animate-bounce [animation-delay:-0.15s]"></div>
+                  <div className="h-4 w-4 bg-white rounded-full animate-bounce"></div>
+                </div>
+              ) : (
+                <button
+                  className="text-white hover:text-gray-300 py-2 px-4 rounded-lg z-1"
+                  onClick={handleSearch}
+                >
+                  Navigate
+                </button>
+              )}
             </div>
 
             <div className="left-4 hidden md:block col-span-1 lg:col-span-2 text-center">
