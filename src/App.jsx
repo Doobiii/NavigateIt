@@ -20,13 +20,13 @@ const App = () => {
   return (
     <>
       <NavigationProvider>
-        <Hero />
-        <NavigationInfo />
+        {/* <Hero /> */}
         {/* <NavigationInfo /> */}
-        {/* <Routes> */}
-        {/* <Route path="/" element={<Hero />} /> */}
-        {/* <Route path="/navigation-info" element={<NavigationInfo />} /> */}
-        {/* </Routes> */}
+        {/* <NavigationInfo /> */}
+        <Routes>
+          <Route path="/" element={<Hero />} />
+          <Route path="/navigation-info/:id" element={<NavigationInfo />} />
+        </Routes>
       </NavigationProvider>
     </>
   );
