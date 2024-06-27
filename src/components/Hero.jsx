@@ -1,39 +1,10 @@
-import React, { useState, useContext } from "react";
+import React, { useContext } from "react";
 import HeroImg from "../assets/image.png";
-import { fetchData } from "../utils/fetchData";
 import { NavigationContext } from "../context/NavigationContext";
-import { useNavigate } from "react-router-dom";
 
 const Hero = () => {
-  const [src, setSrc] = useState("");
-  const [dest, setDest] = useState("");
-  const [loading, setLoading] = useState(false);
-  const { setNavigationData } = useContext(NavigationContext);
-  const navigate = useNavigate();
-
-  const handleSearch = async () => {
-    try {
-      if (src === "" || dest === "") {
-        alert("Please enter the location and destination.");
-        return;
-      }
-
-      setLoading(true);
-      const res = await fetchData(src, dest);
-      console.log(res);
-      setNavigationData(res.data);
-      // Handle the data or update state as needed
-
-      setSrc("");
-      setDest("");
-      navigate(`/navigation-info/${res.request_id}`);
-    } catch (error) {
-      console.error("Error in handleSearch:", error);
-      // Handle error (e.g., show error message)
-    } finally {
-      setLoading(false);
-    }
-  };
+  const { src, setSrc, dest, setDest, handleSearch, loading } =
+    useContext(NavigationContext);
 
   return (
     <main

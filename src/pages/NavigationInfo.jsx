@@ -3,8 +3,15 @@ import { NavigationContext } from "../context/NavigationContext";
 import { Link } from "react-router-dom";
 
 const NavigationInfo = () => {
-  const { navigationData } = useContext(NavigationContext);
+  const { navigationData, src, dest, setSrc, setDest, handleSearch } =
+    useContext(NavigationContext);
   console.log(navigationData);
+
+  const handleKeyDown = (e) => {
+    if (e.key === "Enter") {
+      handleSearch();
+    }
+  };
   return (
     <div className="text-center">
       {navigationData ? (
@@ -19,6 +26,8 @@ const NavigationInfo = () => {
                 <input
                   id="from"
                   type="text"
+                  value={src}
+                  onChange={(e) => setSrc(e.target.value)}
                   className="p-2 border border-gray-300 rounded"
                   placeholder={navigationData.origin.full_address}
                 />
@@ -30,6 +39,9 @@ const NavigationInfo = () => {
                 <input
                   id="to"
                   type="text"
+                  value={dest}
+                  onChange={(e) => setDest(e.target.value)}
+                  onKeyDown={handleKeyDown}
                   className="p-2 border border-gray-300 rounded"
                   placeholder={navigationData.destination.full_address}
                 />
